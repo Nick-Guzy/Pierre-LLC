@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using PierreLLC.Models;
 using System;
 
-namespace ToDoList.Tests
+namespace PierreLLC.Tests
 {
   [TestClass]
   public class ItemTests : IDisposable
