@@ -6,7 +6,7 @@ namespace PierreLLC.Models
   {
     public string Description { get; set; }
     public int Id { get; }
-    private static List<order> _instances = new List<order> { };
+    private static List<Order> _instances = new List<Order> { };
 
     public Order(string description)
     {
