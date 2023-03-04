@@ -7,12 +7,12 @@
 <h3>Here are all the orders for this Vendor:</h3>
 
 <ol>
-@foreach (Order order in @Model["orders"])
+@foreach (Order order in @Model["order"])
 {
-  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
+  <li><a href='/vendors/@Model["vendor"].Id/order/@order.Id'>@order.Description</a></li>
 }
 </ol>
 
-<p><a href='/vendors/@Model["vendor"].Id/order/new'>Add a New Item</a></p>
+<p><a href='/vendors/@Model["vendor"].Id/order/new'>Add a New Order</a></p>
 <p><a href='/vendors'>Return to Vendor List</a></p>
 <p><a href='/'>Return to Main Page</a></p>
