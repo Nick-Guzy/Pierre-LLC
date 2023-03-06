@@ -18,11 +18,11 @@ namespace PierreLLC.Controllers
     public ActionResult Show(int vendorId, int orderId)
     {
       Order order = Order.Find(orderId);
-      Vendor category = Vendor.Find(vendorId);
-      Dictionary<string, object> vendor = new Dictionary<string, object>();
-      vendor.Add("order", order);
-      vendor.Add("vendor", vendor);
-      return View(vendor);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> vendors = new Dictionary<string, object>();
+      vendors.Add("order", order);
+      vendors.Add("vendors", vendor);
+      return View(vendors);
     }
   }
 }

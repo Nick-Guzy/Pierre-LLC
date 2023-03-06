@@ -17,7 +17,7 @@ namespace PierreLLC.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test Vendor");
+      Vendor newVendor = new Vendor("test Vendor", "test Description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -26,7 +26,8 @@ namespace PierreLLC.Tests
     {
       //Arrange
       string name = "Test Vendor";
-      Vendor newVendor = new Vendor(name);
+      string description = "Test Description";
+      Vendor newVendor = new Vendor(name, description);
 
       //Act
       string result = newVendor.Name;
@@ -40,7 +41,8 @@ namespace PierreLLC.Tests
     {
       //Arrange
       string name = "Test Vendor";
-      Vendor newVendor = new Vendor(name);
+      string description = "Test Description";
+      Vendor newVendor = new Vendor(name, description);
 
       //Act
       int result = newVendor.Id;
@@ -55,8 +57,10 @@ namespace PierreLLC.Tests
       //Arrange
       string name01 = "Person";
       string name02 = "Product";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string description01 = "Thing";
+      string description02 = "Stuff";
+      Vendor newVendor1 = new Vendor(name01, description01);
+      Vendor newVendor2 = new Vendor(name02, description02);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       //Act
@@ -72,8 +76,10 @@ namespace PierreLLC.Tests
       //Arrange
       string name01 = "Person";
       string name02 = "Product";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string description01 = "Thing";
+      string description02 = "Stuff";
+      Vendor newVendor1 = new Vendor(name01, description01);
+      Vendor newVendor2 = new Vendor(name02, description02);
 
       //Act
       Vendor result = Vendor.Find(2);
@@ -86,11 +92,15 @@ namespace PierreLLC.Tests
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
       //Arrange
-      string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      string description = "Product";
+      string title = "Stuff"; 
+      string date = "Thing";
+      string price = "Money";
+      Order newOrder = new Order(description, title, date, price);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Person";
-      Vendor newVendor = new Vendor(name);
+      string description2 = "Product";
+      Vendor newVendor = new Vendor(name, description2);
       newVendor.AddOrder(newOrder);
 
       //Act

@@ -6,11 +6,20 @@ namespace PierreLLC.Models
   {
     public string Description { get; set; }
     public int Id { get; }
+
+    public string Title { get; set; }
+
+    public string Date { get; set; }
+
+    public string Price { get; set; }
     private static List<Order> _instances = new List<Order> { };
 
-    public Order(string description)
+    public Order(string orderDescription, string orderTitle, string orderDate, string orderPrice)
     {
-      Description = description;
+      Title = orderTitle;
+      Date = orderDate;
+      Price = orderPrice;
+      Description = orderDescription;
       _instances.Add(this);
       Id = _instances.Count;
     }

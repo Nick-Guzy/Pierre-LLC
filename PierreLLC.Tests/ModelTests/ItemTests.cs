@@ -17,7 +17,7 @@ namespace PierreLLC.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      Order newOrder = new Order("test", "stuff", "thing", "money");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -26,9 +26,12 @@ namespace PierreLLC.Tests
     {
       //Arrange
       string description = "Person";
+      string title = "Stuff";
+      string date = "Thing";
+      string price = "Money";
 
       //Act
-      Order newOrder = new Order(description);
+      Order newOrder = new Order(description, title, date, price);
       string result = newOrder.Description;
 
       //Assert
@@ -40,7 +43,10 @@ namespace PierreLLC.Tests
     {
       //Arrange
       string description = "Person";
-      Order newOrder = new Order(description);
+      string title = "Thing";
+      string date = "Stuff";
+      string price = "Money";
+      Order newOrder = new Order(description, title, date, price);
 
       //Act
       string updatedDescription = "Product";
@@ -70,8 +76,14 @@ namespace PierreLLC.Tests
       //Arrange
       string description01 = "Person";
       string description02 = "Product";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      string title01 = "Thing";
+      string title02 = "Stuff";
+      string date01 = "Thing";
+      string date02 = "Stuff";
+      string price01 = "Thing";
+      string price02 = "Thing";
+      Order newOrder1 = new Order(description01, title01, date01, price01);
+      Order newOrder2 = new Order(description02, title02, date02, price02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       //Act

@@ -10,8 +10,8 @@ namespace PierreLLC.Controllers
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
-      List<Vendor> allCategories = Vendor.GetAll();
-      return View(allCategories);
+      List<Vendor> allVendors = Vendor.GetAll();
+      return View(allVendors);
     }
 
     [HttpGet("/vendors/new")]
@@ -21,9 +21,9 @@ namespace PierreLLC.Controllers
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string VendorName)
+    public ActionResult Create(string VendorName, string vendorDescription)
     {
-      Vendor newVendor = new Vendor(VendorName);
+      Vendor newVendor = new Vendor(VendorName, vendorDescription);
       return RedirectToAction("Index");
     }
 
@@ -33,24 +33,24 @@ namespace PierreLLC.Controllers
       Dictionary<string, object> Orders = new Dictionary<string, object>();
       Vendor selectedVendor = Vendor.Find(id);
       List<Order> VendorOrder = selectedVendor.Orders;
-      Orders.Add("vendor", selectedVendor);
+      Orders.Add("vendors", selectedVendor);
       Orders.Add("order", VendorOrder);
       return View(Orders);
     }
 
 
-    // This one creates new Items within a given Vendor, not new Categories:
+    // This one creates new Orders within a given Vendor, not new Vendors:
 
     [HttpPost("/vendors/{vendorId}/order")]
-    public ActionResult Create(int VendorId, string orderDescription)
+    public ActionResult Create(int VendorId, string orderDescription, string orderTitle, string orderDate, string orderPrice)
     {
       Dictionary<string, object> Orders = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(VendorId);
-      Order newOrder = new Order(orderDescription);
+      Order newOrder = new Order(orderDescription, orderTitle, orderDate, orderPrice);
       foundVendor.AddOrder(newOrder);
       List<Order> VendorOrder = foundVendor.Orders;
       Orders.Add("order", VendorOrder);
-      Orders.Add("vendor", foundVendor);
+      Orders.Add("vendors", foundVendor);
       return View("Show", Orders);
     }
 
