@@ -1,25 +1,20 @@
-
-1. Clone this repo.
-2. Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory called "ToDoList". 
-3. Run `dotnet watch run` in the command line to start the project in development mode with a watcher.
-4. Open the browser to _https://localhost:5001_. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://www.learnhowtoprogram.com/c-and-net/basic-web-applications/redirecting-to-https-and-issuing-a-security-certificate).
-
-
 # Project Name
-Pierre-LLC
+Pierre-LLC.Solution
 # Contributor name
-Nicholas Guzy.
+Nicholas Guzy
 # Description
 The application will represent a bakery called Pierre's bakery.
 # Link to website
 https://github.com/NicksFed/Pierre-LLC.git
 # Technologies used:
 * C#
+* .NET
 # Setup steps
 1. Clone this repo.
-2. Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory called "ToDoList". 
+2. Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory called "PierreLLC". 
 3. Run `dotnet watch run` in the command line to start the project in development mode with a watcher.
 4. Open the browser to _https://localhost:5001_. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://www.learnhowtoprogram.com/c-and-net/basic-web-applications/redirecting-to-https-and-issuing-a-security-certificate).
+5. To run tests, start in the root directory Pierre-LLC.Solution, move into the PierreLLC.Tests folder, run dotnet test. 
 # Known bugs
 None
 # License information with copyright and date
